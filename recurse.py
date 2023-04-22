@@ -21,7 +21,6 @@ def spicy(n, base_cases, split, combine):
 
     values = base_cases.copy()
     for i in sorted(breadth_first_search(n, get_children)):
-        print(i)
         assert i not in values
         a, b = split(i)
         values[i] = combine(values[a], values[b])

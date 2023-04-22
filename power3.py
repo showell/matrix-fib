@@ -18,7 +18,7 @@ def test():
     p3 = recurse_power(3, n)
     assert p3 == 3**n
     print()
-    print(f"3 ** {n} = {p3}")
+    print(f"    3 ** {n} = {p3}")
 
 
 test()
