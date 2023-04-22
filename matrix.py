@@ -29,4 +29,8 @@ if __name__ == "__main__":
     m = q_matrix
     for i in range(10):
         print(m)
-        m = m * q_matrix
+        m = q_matrix * m
+        """
+        0 1  * a b  =    b   c
+        1 1    b c     a+b b+c
+        """
