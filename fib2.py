@@ -20,24 +20,16 @@ def recurse_fib(n):
     if n == 1:
         return 1
     identity = matrix.Matrix22((1, 0), (0, 1))
-    action_matrix = matrix.Matrix22((0, 1), (1, 1))
-    m = recurse_power(action_matrix, n, identity)
+    q_matrix = matrix.Matrix22((0, 1), (1, 1))
+    m = recurse_power(q_matrix, n, identity)
     return m.tr
 
 
 def test():
-    fib = {}
-    fib[0] = 0
-    fib[1] = 1
-    assert recurse_fib(0) == 0
-    assert recurse_fib(1) == 1
-    for i in range(2, 5001):
-        fib[i] = fib[i - 1] + fib[i - 2]
-        recurse_val = recurse_fib(i)
-        assert recurse_val == fib[i]
-        print()
-        print(f"       fib({i}) = ")
-        print("       ", recurse_val)
+    fibs = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
+    for i in range(len(fibs)):
+        assert recurse_fib(i) == fibs[i]
+    print(recurse_fib(20000))
 
 
 test()

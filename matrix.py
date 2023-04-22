@@ -22,11 +22,11 @@ class Matrix22:
 
 
 if __name__ == "__main__":
-    m_orig = Matrix22(
+    q_matrix = Matrix22(
         (0, 1),
         (1, 1),
     )
-    m = m_orig
+    m = q_matrix
     for i in range(10):
         print(m)
-        m = m * m_orig
+        m = m * q_matrix
