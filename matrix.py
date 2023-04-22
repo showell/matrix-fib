@@ -22,6 +22,10 @@ class Matrix22:
 
 
 if __name__ == "__main__":
+    """
+    0 1  * a b  =    b   c
+    1 1    b c     a+b b+c
+    """
     q_matrix = Matrix22(
         (0, 1),
         (1, 1),
@@ -30,7 +34,3 @@ if __name__ == "__main__":
     for i in range(10):
         print(m)
         m = q_matrix * m
-        """
-        0 1  * a b  =    b   c
-        1 1    b c     a+b b+c
-        """
