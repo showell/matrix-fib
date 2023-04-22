@@ -1,29 +1,3 @@
-def simple(n, base_cases, split, combine):
-    def f(i):
-        if i in base_cases:
-            return base_cases[i]
-        a, b = split(i)
-        return combine(f(a), f(b))
-
-    return f(n)
-
-
-def memoized(n, base_cases, split, combine):
-    cache = {}
-
-    def f(i):
-        if i in base_cases:
-            return base_cases[i]
-        if i in cache:
-            return cache[i]
-        a, b = split(i)
-        result = combine(f(a), f(b))
-        cache[i] = result
-        return result
-
-    return f(n)
-
-
 def breadth_first_search(top, get_children):
     inbox = [top]
     results = {top}
@@ -47,6 +21,7 @@ def spicy(n, base_cases, split, combine):
 
     values = base_cases.copy()
     for i in sorted(breadth_first_search(n, get_children)):
+        print(i)
         assert i not in values
         a, b = split(i)
         values[i] = combine(values[a], values[b])
