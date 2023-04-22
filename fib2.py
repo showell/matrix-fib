@@ -14,18 +14,14 @@ def recurse_power(base, n, one):
     return recurse.spicy(n, base_cases, split, combine)
 
 
-def recurse_fib_matrix(n):
-    identity = matrix.Matrix22((1, 0), (0, 1))
-    m = matrix.Matrix22((0, 1), (1, 1))
-    return recurse_power(m, n, identity)
-
-
 def recurse_fib(n):
     if n == 0:
         return 0
     if n == 1:
         return 1
-    m = recurse_fib_matrix(n)
+    identity = matrix.Matrix22((1, 0), (0, 1))
+    action_matrix = matrix.Matrix22((0, 1), (1, 1))
+    m = recurse_power(action_matrix, n, identity)
     return m.tr
 
 
