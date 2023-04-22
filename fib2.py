@@ -19,17 +19,20 @@ def recurse_fib(n):
         return 0
     if n == 1:
         return 1
-    identity = matrix.Matrix22((1, 0), (0, 1))
-    q_matrix = matrix.Matrix22((0, 1), (1, 1))
+    identity = matrix.Matrix22(
+        (1, 0),
+        (0, 1),
+    )
+    q_matrix = matrix.Matrix22(
+        (0, 1),
+        (1, 1),
+    )
     m = recurse_power(q_matrix, n, identity)
     return m.tr
 
 
-def test():
+if __name__ == "__main__":
     fibs = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
     for i in range(len(fibs)):
         assert recurse_fib(i) == fibs[i]
     print(recurse_fib(20000))
-
-
-test()
