@@ -15,9 +15,9 @@ def recurse_power(base, n, one):
 
 
 def recurse_fib_matrix(n):
-    one = matrix.Matrix22(1, 0, 0, 1)
+    identity = matrix.Matrix22(1, 0, 0, 1)
     m = matrix.Matrix22(0, 1, 1, 1)
-    return recurse_power(m, n, one)
+    return recurse_power(m, n, identity)
 
 
 def recurse_fib(n):
