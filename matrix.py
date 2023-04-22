@@ -1,5 +1,7 @@
 class Matrix22:
     def __init__(self, top, bottom):
+        assert len(top) == 2
+        assert len(bottom) == 2
         self.tl = top[0]
         self.tr = top[1]
         self.bl = bottom[0]
