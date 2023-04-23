@@ -12,8 +12,8 @@ class Matrix22:
 
     def __str__(self):
         return f"""
-            {self.tl} {self.tr}
-            {self.bl} {self.br}
+            |{self.tl:3} {self.tr:3} |
+            |{self.bl:3} {self.br:3} |
         """
 
 
