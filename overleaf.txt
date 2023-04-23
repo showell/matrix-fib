@@ -4,7 +4,7 @@
 \documentclass[17pt]{extarticle}
 \usepackage{amsmath}
 
-\newcommand{\mm}[4]{\begin{bmatrix}#1 & #2\\#3 & 4 \end{bmatrix}}
+\newcommand{\mm}[4]{\begin{bmatrix}#1 & #2\\#3 & #4 \end{bmatrix}}
 
 \begin{document}
 

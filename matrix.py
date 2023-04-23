@@ -11,22 +11,18 @@ class Matrix22:
         return Matrix22((tl, tr), (bl, br))
 
     def __str__(self):
-        return f"""
-            |{self.tl:3} {self.tr:3} |
-            |{self.bl:3} {self.br:3} |
-        """
-
+        return f"\mm{{{self.tl}}}{{{self.tr}}}{{{self.bl}}}{{{self.br}}}"
 
 if __name__ == "__main__":
-    """
-    0 1  * a b  =    b   c
-    1 1    b c     a+b b+c
-    """
     q_matrix = Matrix22(
         (0, 1),
         (1, 1),
     )
     m = q_matrix
     for i in range(10):
-        print(m)
-        m = q_matrix * m
+        new_m = q_matrix * m
+        print("\\begin{equation}")
+        print(f"{q_matrix} \\times {m} = {new_m}")
+        print("\\end{equation}")
+        print()
+        m = new_m
