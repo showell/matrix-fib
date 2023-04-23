@@ -14,15 +14,22 @@ class Matrix22:
         return f"\mm{{{self.tl}}}{{{self.tr}}}{{{self.bl}}}{{{self.br}}}"
 
 if __name__ == "__main__":
+    with open("overleaf.preamble") as f:
+        print(f.read())
+
+    print("\\begin{document}")
+
     q_matrix = Matrix22(
         (0, 1),
         (1, 1),
     )
     m = q_matrix
-    for i in range(10):
+    for i in range(15):
         new_m = q_matrix * m
         print("\\begin{equation}")
         print(f"{q_matrix} \\times {m} = {new_m}")
         print("\\end{equation}")
         print()
         m = new_m
+
+    print("\\end{document}")
