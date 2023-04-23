@@ -1,0 +1,20 @@
+
+% Use overleaf to render this.
+
+\documentclass[17pt]{extarticle}
+\usepackage{amsmath}
+
+\newcommand{\mm}[4]{\begin{bmatrix}#1 & #2\\#3 & 4 \end{bmatrix}}
+
+\begin{document}
+
+\begin{equation}
+\mm{5}{6}{7}{8} \times \mm{4}{2}{5}{6} = \mm{33}{42}{76}{79}        
+\end{equation}
+
+\begin{equation}
+\mm{0}{6}{7}{8} \times \mm{4}{2}{3335}{6} = \mm{33}{42}{76}{79}
+\end{equation}
+
+
+\end{document}
