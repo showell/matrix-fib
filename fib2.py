@@ -1,15 +1,6 @@
 import matrix
 
 
-def simple_fib(n):
-    if n == 0:
-        return 0
-    a, b = 0, 1
-    for i in range(n - 1):
-        a, b = (b, a + b)
-    return b
-
-
 def power(base, n):
     assert n >= 1
     if n == 1:
@@ -38,6 +29,15 @@ def recurse_fib(n):
 
 
 if __name__ == "__main__":
+
+    def simple_fib(n):
+        if n == 0:
+            return 0
+        a, b = 0, 1
+        for i in range(n - 1):
+            a, b = (b, a + b)
+        return b
+
     fibs = [0, 1, 1, 2, 3, 5, 8, 13, 21, 34, 55, 89]
     for i in range(len(fibs)):
         assert simple_fib(i) == fibs[i]
