@@ -1,11 +1,7 @@
 class Matrix22:
     def __init__(self, top, bottom):
-        assert len(top) == 2
-        assert len(bottom) == 2
-        self.tl = top[0]
-        self.tr = top[1]
-        self.bl = bottom[0]
-        self.br = bottom[1]
+        self.tl, self.tr = top
+        self.bl, self.br = bottom
 
     def __mul__(self, other):
         tl = self.tl * other.tl + self.tr * other.bl
