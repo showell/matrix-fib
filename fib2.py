@@ -1,17 +1,18 @@
-import recurse
 import matrix
 
 
-def recurse_power(base, n, one):
-    base_cases = {0: one, 1: base}
+def power(base, n):
+    assert n >= 1
+    if n == 1:
+        return base
 
-    def split(n):
-        return (n // 2, n % 2)
+    a = power(base, n // 2)
+    result = a * a
 
-    def combine(a, b):
-        return a * a * b
+    if n % 2:
+        result *= base
 
-    return recurse.spicy(n, base_cases, split, combine)
+    return result
 
 
 def recurse_fib(n):
@@ -19,15 +20,11 @@ def recurse_fib(n):
         return 0
     if n == 1:
         return 1
-    identity = matrix.Matrix22(
-        (1, 0),
-        (0, 1),
-    )
     q_matrix = matrix.Matrix22(
         (0, 1),
         (1, 1),
     )
-    m = recurse_power(q_matrix, n, identity)
+    m = power(q_matrix, n)
     return m.tr
 
 
